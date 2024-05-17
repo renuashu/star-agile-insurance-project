@@ -33,11 +33,11 @@ tools {
 
    stage('docker login') {
             steps{
-                  withCredentials([usernamePassword(credentialsId: 'dockerhublogin', passwordVariable: 'renuashu@1234', usernameVariable: 'renukadocker26')]) {
-           echo 'Login success'
+                  withCredentials([usernamePassword(credentialsId: 'dockerhublogin', passwordVariable: 'renuashu@1234', usernameVariable: 'renukadocker26')]) 
+              echo 'Login success'
     }
                 }
-             }
+             
 
    stage('push image to docker hub') {
             steps{
@@ -47,4 +47,3 @@ tools {
              }
         }
     }
-}
