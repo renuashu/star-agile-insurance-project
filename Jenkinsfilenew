@@ -35,7 +35,7 @@ tools {
             steps{
                   withCredentials([usernamePassword(credentialsId: 'dockerhublogin', passwordVariable: 'renuashu@1234', usernameVariable: 'renukadocker26')]) {
            echo 'Login success'
-             sh 'docker push renukadocker26/insurance17may:01'
+             sh 'dockerImage.push renukadocker26/insurance17may:01'
     }
                 }
              }
