@@ -4,6 +4,9 @@ pipeline {
 tools {
   maven 'M2_HOME'
 }
+environment {     
+    DOCKERHUB_CREDENTIALS= credentials('dockerhubcredentials')     
+  }    
     stages{
         stage('checkout') {
             steps{
