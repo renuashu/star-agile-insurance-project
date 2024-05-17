@@ -27,7 +27,7 @@ tools {
      stage('create image using package') {
             steps{
                   echo 'create a docker image from the package'
-               sh 'docker build -t  renukadocker26/insurance17may:01 .'
+                  sh 'docker build -t renukadocker26/insurance17may:01 .'
                 }
              }
         }
