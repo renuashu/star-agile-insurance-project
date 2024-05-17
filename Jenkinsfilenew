@@ -34,7 +34,7 @@ tools {
    stage('push image to docker hub') {
             steps{
                   withCredentials([usernamePassword(credentialsId: 'dockerhublogin', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
-                  docker push {renukadocker26/insurance17may:01}
+                  docker push {renukadocker26/insurance17may}
                 }
              }
         }
