@@ -18,5 +18,10 @@ tools {
                sh 'mvn clean package'
                 }
         }
-}
-}
+    stage('Publish test reports') {
+            steps{
+               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/InsuranceProject/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+                }
+            }
+        }
+    }
