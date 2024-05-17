@@ -35,15 +35,14 @@ tools {
             steps{
                   withCredentials([usernamePassword(credentialsId: 'dockerhublogin', passwordVariable: 'renuashu@1234', usernameVariable: 'renukadocker26')]) {
            echo 'Login success'
-             sh 'sudo docker push renukadocker26/insurance17may:01'
     }
                 }
              }
 
    stage('push image to docker hub') {
             steps{
-                  withCredentials([usernamePassword(credentialsId: 'dockerhublogin', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
-                   sh 'docker push renukadocker26/insurance17may:01'
+                        sh 'sudo docker push renukadocker26/insurance17may:01'
+                        echo 'push complete
                 }
              }
         }
