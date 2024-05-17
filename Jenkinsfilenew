@@ -30,5 +30,13 @@ tools {
                   sh 'docker build -t renukadocker26/insurance17may:01 .'
                 }
              }
+
+   stage('push image to docker hub') {
+            steps{
+                  withCredentials([usernamePassword(credentialsId: 'dockerhublogin', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
+                  docker push renukadocker26/insurance17may:01
+}
+                }
+             }
         }
     }
