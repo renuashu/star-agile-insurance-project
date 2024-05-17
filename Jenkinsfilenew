@@ -33,8 +33,9 @@ tools {
 
    stage('docker login') {
             steps{
-                  withCredentials([usernamePassword(credentialsId: 'dockerhublogin', passwordVariable: 'renuashu@1234', usernameVariable: 'renukadocker26')]) 
+                  withCredentials([usernamePassword(credentialsId: 'dockerhublogin', passwordVariable: 'renuashu@1234', usernameVariable: 'renukadocker26')]) {
               echo 'Login success'
+}
     }
                 }
              
@@ -45,5 +46,10 @@ tools {
                         echo 'push complete'
                 }
              }
-        }
+      }
+Post{
+always{ 
+sh 'docker logout'
     }
+}
+}
