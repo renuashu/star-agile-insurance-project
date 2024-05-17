@@ -23,5 +23,12 @@ tools {
                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/InsuranceProject/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
                 }
             }
+
+     stage('create image using package') {
+            steps{
+                  echo 'create a docker image from the package'
+               sh 'docker build -t  renukadocker26/insurance17may:01 .'
+                }
+             }
         }
     }
