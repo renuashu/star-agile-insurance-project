@@ -34,6 +34,7 @@ tools {
    stage('docker login') {
             steps{
                   withCredentials([usernamePassword(credentialsId: 'dockerhublogin', passwordVariable: 'renuashu@1234', usernameVariable: 'renukadocker26')]) {
+                    sh "docker login -u ${usernameVariable} -p ${passwordVariable}"
               echo 'Login success'
 }
     }
