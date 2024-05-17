@@ -4,9 +4,7 @@ pipeline {
 tools {
   maven 'M2_HOME'
 }
-environment {     
-    DOCKERHUB_CREDENTIALS= credentials('Dockerlogin-user')     
-  }    
+  
     stages{
         stage('checkout') {
             steps{
@@ -33,17 +31,12 @@ environment {
                   sh 'docker build -t renukadocker26/insurance17may:01 .'
                 }
              }
-stage('Login to Docker Hub1') {         
-      steps{                            
-	sh 'echo $dockerhubpass | docker login -u $dockerhublogin --password-stdin'                 
-	echo 'Login Completed'                
-      }           
-    }               
+   
 stage('Login to Docker Hub') {
             steps {
                 echo 'Logging in to Docker Hub...'
                 withCredentials([usernamePassword(credentialsId: 'Dockerlogin-user', passwordVariable: 'dockerhubpass', usernameVariable: 'dockerhublogin')]) {
-                    sh "docker login -u ${dockerhublogin} -p ${dockerhubpass}"
+                    sh "docker login -u ${dockerhublogin} -p ${dockerhubpass} --password-stdin"
                 }
             }
         }
