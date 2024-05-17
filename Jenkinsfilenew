@@ -47,9 +47,9 @@ tools {
                 }
              }
       }
-Post{
-always{ 
-sh 'docker logout'
-    }
-}
+//Post{
+//always{ 
+//sh 'docker logout'
+  //  }
+//}
 }
