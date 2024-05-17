@@ -41,8 +41,8 @@ tools {
 
    stage('push image to docker hub') {
             steps{
-                        sh 'sudo docker push renukadocker26/insurance17may:01'
-                        echo 'push complete
+                    sh 'sudo docker push {renukadocker26/insurance17may:01}'
+                        echo 'push complete'
                 }
              }
         }
