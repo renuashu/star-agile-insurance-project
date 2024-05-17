@@ -33,7 +33,7 @@ environment {
                   sh 'docker build -t renukadocker26/insurance17may:01 .'
                 }
              }
-stage('Login to Docker Hub') {         
+stage('Login to Docker Hub1') {         
       steps{                            
 	sh 'echo $dockerhubpass | docker login -u $dockerhublogin --password-stdin'                 
 	echo 'Login Completed'                
@@ -55,10 +55,6 @@ stage('Login to Docker Hub') {
             }
         }
    
-//Post{
-//always{ 
-//sh 'docker logout'
-  //  }
-//}
+
 }
 }
